@@ -1,73 +1,69 @@
-# 🧠 Brain Tumor Classification in MRI Scans
+# Brain Tumor Classification in MRI Scans
 
-Dieses Projekt beschäftigt sich mit der automatisierten Erkennung von Hirntumoren auf MRT-Bildern mithilfe klassischer Machine-Learning-Algorithmen, Convolutional Neural Networks (CNNs) und Transfer Learning mit MobileNetV2.
-
----
-
-## 📌 Ziel
-
-Ziel ist es, ein Modell zu entwickeln, das zuverlässig zwischen MRTs **mit Tumor** und **ohne Tumor** unterscheidet. Dabei werden verschiedene Ansätze verglichen:
-
-- Klassische ML-Modelle (Logistische Regression, Random Forest, SVM)
-- Eigene CNN-Architektur
-- Transfer Learning mit MobileNetV2
+This project focuses on automated detection of brain tumors in MRI scans using classical Machine Learning algorithms, Convolutional Neural Networks (CNNs), and Transfer Learning with MobileNetV2.
 
 ---
 
-## 📁 Datensatz
+## Goal
 
-- 📦 **Quelle**: [Brain MRI Images for Brain Tumor Detection (Kaggle)](https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection)
-- 🧪 2 Klassen: `yes` (Tumor vorhanden), `no` (kein Tumor)
-- 🖼️ Bildergröße: 512×512, einfarbig (teilweise RGB)
-- 🔁 Vorverarbeitung:
-  - Resize auf 224×224 Pixel
-  - Normalisierung (0–1)
-  - Label-Encoding (0 = kein Tumor, 1 = Tumor)
+Develop a model that distinguishes between MRIs **with** and **without** tumors. Compared approaches:
+
+- Classical ML (Logistic Regression, Random Forest, SVM)
+- Custom CNN
+- Transfer Learning (MobileNetV2)
 
 ---
 
-## 🧮 Verwendete Modelle
+## Dataset
 
-### Klassische Machine Learning Modelle
+- **Source**: [Brain MRI Images for Brain Tumor Detection (Kaggle)](https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection)  
+- **Classes**: `yes` (tumor), `no` (no tumor)  
+- **Image size**: 512×512, grayscale (some RGB)  
+- **Preprocessing**:
+  - Resize to 224×224
+  - Normalize (0–1)
+  - Label-encoding (0 = no tumor, 1 = tumor)
 
-- 📊 **Logistic Regression**
-- 🌲 **Random Forest**
-- 🧭 **Support Vector Machine (SVM)**
+---
 
-👉 Eingesetzt auf flach vektorisierten Bilddaten (nach Preprocessing)
+## Models
+
+### Classical ML
+
+- Logistic Regression  
+- Random Forest  
+- Support Vector Machine (SVM)  
+
+> Trained on flattened preprocessed image data.
 
 ### Deep Learning
 
-- 🧠 **CNN**: Einfaches Convolutional Neural Network mit Conv2D + MaxPooling
-- 🚀 **MobileNetV2**: Vortrainiertes Modell (Transfer Learning, Feature Extraction)
+- CNN: basic Conv2D + MaxPooling architecture  
+- MobileNetV2: pretrained (transfer learning, feature extraction)
 
 ---
 
-## 🧪 Ergebnisse
+## Results
 
-| Modell             | Test Accuracy |
-|--------------------|---------------|
-| Logistic Regression | 0.85          |
-| Random Forest       | 0.88          |
-| SVM                 | 0.86          |
-| CNN (eigene Arch.)  | 0.90          |
-| MobileNetV2         | **0.93 ✅**   |
+| Model               | Test Accuracy |
+|----------------------|---------------|
+| Logistic Regression  | 0.85 |
+| Random Forest        | 0.88 |
+| SVM                  | 0.86 |
+| CNN (custom)         | 0.90 |
+| MobileNetV2           | **0.93** |
 
 ---
 
-## 📷 Visuelle Beispiele
+## Visual Examples
 
-Einige Beispielbilder aus dem Datensatz mit zugehörigem Ground Truth Label:
-
-| Tumor vorhanden | Kein Tumor |
-|-----------------|------------|
+| Tumor | No Tumor |
+|-------|-----------|
 | ![](data/yes/Y1.jpg) | ![](data/no/N1.jpg) |
 
-> 🔍 In der erweiterten Version werden zusätzlich Modell-Vorhersagen, falsch klassifizierte Bilder und Aktivierungskarten visualisiert.
-
 ---
 
-## 📚 Verwendete Tools
+## Tools
 
 - Python (3.10)
 - scikit-learn
@@ -78,34 +74,35 @@ Einige Beispielbilder aus dem Datensatz mit zugehörigem Ground Truth Label:
 
 ---
 
-## 🧠 Learnings
+## Learnings
 
-- Klassische ML-Modelle liefern eine starke Baseline – besonders bei guter Vorverarbeitung
-- CNNs erkennen Bildmuster effizienter und skalieren besser
-- Transfer Learning (MobileNetV2) funktioniert selbst mit kleinen Datensätzen sehr gut
-- Visuelle Analyse (Fehlklassifikationen, Plots) ist essenziell für Bewertung & Verbesserung
-
----
-
-## 🛠️ Weiteres geplant
-
-- 📈 Hyperparameter-Tuning für CNNs
-- 🧪 Cross Validation
-- 💬 Confusion Matrix + Precision/Recall
-- 🧠 Grad-CAM (Erklärung der CNN-Vorhersagen)
-- 🗃️ Export als `.h5` Modell für Anwendung
+- Classical ML provides a solid baseline
+- CNNs capture image patterns more effectively
+- Transfer learning (MobileNetV2) performs well even on small datasets
+- Visual error analysis is key for model improvement
 
 ---
 
-## ✍️ Autor
+## Next Steps
+
+- Hyperparameter tuning for CNNs
+- Cross validation
+- Confusion matrix + precision/recall
+- Grad-CAM visualizations
+- Export as `.h5` model
+
+---
+
+## Author
 
 **Mitko Valtchev**  
-Studium: M.Sc. Computer Engineering – TU Berlin  
-Interesse: Machine Learning für medizinische Bildverarbeitung (Imaging AI)
+M.Sc. Computer Engineering – TU Berlin  
+Focus: Machine Learning for Medical Imaging
 
 ---
 
-## 📎 Lizenz
+## License
 
-Dieses Projekt ist zu Lernzwecken öffentlich zugänglich. Bei Verwendung bitte verlinken.
+This project is public for educational use. Please provide attribution.
+
 
