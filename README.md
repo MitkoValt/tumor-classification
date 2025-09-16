@@ -29,18 +29,10 @@ Classifying brain tumors in MRI scans using ML, CNNs, and Transfer Learning (Mob
 
 ---
 
-## Tools
-Python, scikit-learn, TensorFlow/Keras, OpenCV
-
----
-
-## Notes
+## Conclusion
 - CNNs outperform classical ML
 - Transfer learning works well on small data
 
----
 
-## Author
-**Mitko Valtchev** – TU Berlin
 
 
