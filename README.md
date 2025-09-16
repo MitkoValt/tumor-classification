@@ -1,108 +1,46 @@
-# Brain Tumor Classification in MRI Scans
+# Brain Tumor Classification
 
-This project focuses on automated detection of brain tumors in MRI scans using classical Machine Learning algorithms, Convolutional Neural Networks (CNNs), and Transfer Learning with MobileNetV2.
-
----
-
-## Goal
-
-Develop a model that distinguishes between MRIs **with** and **without** tumors. Compared approaches:
-
-- Classical ML (Logistic Regression, Random Forest, SVM)
-- Custom CNN
-- Transfer Learning (MobileNetV2)
+Classifying brain tumors in MRI scans using ML, CNNs, and Transfer Learning (MobileNetV2).
 
 ---
 
 ## Dataset
-
-- **Source**: [Brain MRI Images for Brain Tumor Detection (Kaggle)](https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection)  
-- **Classes**: `yes` (tumor), `no` (no tumor)  
-- **Image size**: 512×512, grayscale (some RGB)  
-- **Preprocessing**:
-  - Resize to 224×224
-  - Normalize (0–1)
-  - Label-encoding (0 = no tumor, 1 = tumor)
+- [Kaggle: Brain MRI Images](https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection)
+- 2 classes: `yes` / `no`
+- Preprocessing: resize (224×224), normalize, label encode
 
 ---
 
-## Models
-
-### Classical ML
-
-- Logistic Regression  
-- Random Forest  
-- Support Vector Machine (SVM)  
-
-> Trained on flattened preprocessed image data.
-
-### Deep Learning
-
-- CNN: basic Conv2D + MaxPooling architecture  
-- MobileNetV2: pretrained (transfer learning, feature extraction)
+## Models & Accuracy
+| Model             | Acc  |
+|-------------------|------|
+| Logistic Regression | 0.85 |
+| Random Forest       | 0.88 |
+| SVM                 | 0.86 |
+| CNN (custom)        | 0.90 |
+| MobileNetV2         | **0.93** |
 
 ---
 
-## Results
-
-| Model               | Test Accuracy |
-|----------------------|---------------|
-| Logistic Regression  | 0.85 |
-| Random Forest        | 0.88 |
-| SVM                  | 0.86 |
-| CNN (custom)         | 0.90 |
-| MobileNetV2           | **0.93** |
-
----
-
-## Visual Examples
-
+## Example Images
 | Tumor | No Tumor |
 |-------|-----------|
-| ![](data/yes/Y1.jpg) | ![](data/no/N1.JPG) |
+| ![](data/yes/Y1.jpg) | ![](data/no/N16.jpg) |
 
 ---
 
 ## Tools
-
-- Python (3.10)
-- scikit-learn
-- OpenCV
-- TensorFlow / Keras
-- Matplotlib / Seaborn
-- Jupyter Notebook
+Python, scikit-learn, TensorFlow/Keras, OpenCV
 
 ---
 
-## Learnings
-
-- Classical ML provides a solid baseline
-- CNNs capture image patterns more effectively
-- Transfer learning (MobileNetV2) performs well even on small datasets
-- Visual error analysis is key for model improvement
-
----
-
-## Next Steps
-
-- Hyperparameter tuning for CNNs
-- Cross validation
-- Confusion matrix + precision/recall
-- Grad-CAM visualizations
-- Export as `.h5` model
+## Notes
+- CNNs outperform classical ML
+- Transfer learning works well on small data
 
 ---
 
 ## Author
-
-**Mitko Valtchev**  
-M.Sc. Computer Engineering – TU Berlin  
-Focus: Machine Learning for Medical Imaging
-
----
-
-## License
-
-This project is public for educational use. Please provide attribution.
+**Mitko Valtchev** – TU Berlin
 
 
