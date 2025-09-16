@@ -59,7 +59,7 @@ Develop a model that distinguishes between MRIs **with** and **without** tumors.
 
 | Tumor | No Tumor |
 |-------|-----------|
-| ![](data/yes/Y1.jpg) | ![](data/no/1 no.jpg) |
+| ![](data/yes/Y1.jpg) | ![](data/no/N1.JPG) |
 
 ---
 
